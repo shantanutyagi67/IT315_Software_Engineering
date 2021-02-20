@@ -1,0 +1,78 @@
+Question 1:
+Discover ambiguities or omissions in the following statement of requirements for part of a ticketissuing system:
+An automated ticket issuing system sells rail tickets. Users select their destination, and input a credit card
+and a personal identification number. The rail ticket is issued and their credit card account charged with its
+cost. When the user presses the start button, a menu display of potential destinations is activated along
+with a message to the user to select a destination. Once a destination has been selected, users are
+requested to input their credit card. Its validity is checked and the user is then requested to input a personal
+identifier. When the credit transaction has been validated, the ticket is issued.
+
+Answer 1:
+A few ambiguities or omissions are:
+
+1. Regarding Payment: Only one payment option is available. Other options like debit card, cash, UPI
+should also be available. There is no mention about invalid credentials in login or payment and how will 
+they be handled by the system.(omission)
+
+2. Regarding Session: There is no mention about how the session is maintained with the user. Do we need to log
+out after we have recieved the ticket or does the system does it itself. This is needed because if we want 
+to book another ticket then do we need to again start from the scratch by entering their card and identification
+number after pressing start or if the session is maintained, how do we go back to the destination menu.(ambiguity)
+
+3. Redarding recieving the ticket: Once the ticket is issued, how does the user get the ticket is not mentioned.
+Does the machine print the ticket, or is it sent via email, or is it shown on the screen. or it the system
+automated and the ticket checker gets the ticket in his database and the user just needs to tell his ID and
+the ticket checker will look for active tickets by that ID for the day, how cool will that be.(ambiguity)
+
+4. Regarding Ticket menu: Suppose I am at staion X but I want to buy a ticket for station Y to Station Z, is 
+possible has not been clarified. Are the tickets available in advance, for example can I book a ticket for a 
+journey 1 month in advance. Do i get to select a seat of my choice if available. Are the arrival and departure
+times dynamically updated if I have booked my ticket 1 month in advance.(ambiguity, omission)
+
+5. Regarding Hardware: There is no mention about how the user interacts with the system. Does the user need to
+type in using a numeric key pad, or is the system all touch screen or is it a mixture of both like ATMs.(ambiguity)
+
+
+Question 2:
+Case Study- Identify the functional and non-functional requirements for the given problem
+specification
+The institute has been recently setup to provide state-of-the-art research facilities in the field of Software
+Engineering. Apart from research scholars (students) and professors, it also includes quite a large number
+of employees who work on different projects undertaken by the institution. As the size and capacity of the
+institute is increasing with the time, it has been proposed to develop a Library Information System (LIS) for
+the benefit of students and employees of the institute. LIS will enable the members to borrow a book (or
+return it) with ease while sitting at his desk/chamber. The system also enables a member to extend the
+date of his borrowing if no other booking for that particular book has been made. For the library staff, this
+system aids them to easily handle day-to-day book transactions. The librarian, who has administrative
+privileges and complete control over the system, can enter a new record into the system when a new book
+has been purchased, or remove a record in case any book is taken off the shelf. Any non-member is free to
+use this system to browse/search books online. However, issuing or returning books is restricted to valid
+users (members) of LIS only.
+The final deliverable would a web application (using the recent HTML 5), which should run only within the
+institute LAN. Although this reduces security risk of the software to a large extent, care should be taken no
+confidential information (e.g., passwords) is stored in plain text.
+
+Answer 2:
+
+Functional Requirements are:
+1. Verified registeration: Can be done only through institue id
+2. Login: registered user can login to start the session to avail the services provided
+3. search book: Using different filters, the user can find the book they want
+4. borrow book: book will be issued to the user if books is available and the student does not have any
+due books to return. After the book is issues, the database is updated and changes are reflected on the users
+account showing issue date, return date, etc.
+5. extend: User can again issue the book if the librarian permits and is within the reissue limit and the updation
+is done like before to reflect the changes.
+6. return: After the specified borrow period is over, the user needs to return the book and library database and user
+account are updated to show the change by the librarian.
+7. database: the librarian can add new books, update status and delete old books from the database.
+8. Edit and view the user profile
+
+Non-Functional Requirements are: They basically deal with issues like Security, Maintainability, Reliability
+Performance and Reusability.
+
+1. service should be available at all times.
+2. the system should be able to handle mutiple users simultaneously searching for books.
+3. Login can be done only when connected to the college LAN.
+4. Passwords should be encrypted.
+5. the system has to be developed as a web app.
